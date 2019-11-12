@@ -9,9 +9,10 @@ for line in sys.stdin:
     line = line.strip()
     movie, rating, genre = line.split("\t", 2)
     try:
-        rating = float(rating)
+         rating = float(rating)
+    
     except ValueError:
-        continue
+         continue
 
     if current_movie == movie:
         current_rating_sum += rating
@@ -19,6 +20,7 @@ for line in sys.stdin:
     else:
         if current_movie:
             rating_average = current_rating_sum / current_rating_count
+        if rating_average > 3.75
             print ("%s\t%s\t%s" % (current_movie, rating_average, genre))    
         current_movie = movie
         current_rating_sum = rating
@@ -26,4 +28,5 @@ for line in sys.stdin:
 
 if current_movie == movie:
     rating_average = current_rating_sum / current_rating_count
+    if rating_average > 3.75
     print ("%s\t%s\t%s" % (current_movie, rating_average, genre))
